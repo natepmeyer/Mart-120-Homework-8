@@ -1,0 +1,70 @@
+<html>
+        <body background="mathbackground2.jpg">
+        </body>
+        <h1 style="font-size:60px; color:rgb(92, 89, 89);">Test Your Math Skills</h1>
+    <title>Game</title>
+    <head>
+    <script>
+        var actualAnswer;
+        var number1;
+        var number2;
+      
+        function printQuestion()
+        {
+            actualAnswer = number1 + number2;
+            document.getElementById("theQuestion").innerHTML = "What is " + number1 + "+" + number2 + "?";
+        }
+        function checkAnswer()
+        {
+            var answer = document.getElementById("txtAnswer").value;
+            if(answer == actualAnswer)
+            {
+                document.getElementById("finalResult").innerHTML = "Good job!";
+                runGame();
+            }
+            else
+            {
+                document.getElementById("finalResult").innerHTML = "Try Again!";
+            }
+        }
+
+        function runGame()
+        {
+            for(var i = 0; i < 5; i++)
+            {
+                 number1 = Math.floor(Math.random() * 10);
+                 number2 = Math.floor(Math.random() * 10);
+            }
+            printQuestion();
+        }
+    </script>
+    </head>
+    <body onload="runGame();">
+        <div id="theQuestion"></div>
+            <table>
+                <tr>
+                    <td>Your answer</td>
+                    <td><input type="text" id="txtAnswer"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+                </tr>
+            </table>
+        <div id="finalResult"></div>
+        <head>
+                <style>
+                    span{
+                        font-family: Arial, Helvetica, sans-serif;
+        
+                    }
+                </style>
+            </head>
+            <p></p>
+            <span><a href="Biography.html" style="text-decoration:none">Biography</a></span>
+            <br>
+            <p></p>
+            <span><a href="natemeyer.html" style="text-decoration:none">Home</a></span>
+    </body>
+ </html>
+
+
